@@ -14,20 +14,27 @@ addEventListener("click", function () {
   console.log(btnsOpenModal[2]);
 }); */
 
+function removeHidden(variable) {
+  variable.classList.remove("hidden");
+}
+
+function addHidden(variable) {
+  variable.classList.add("hidden");
+}
+
 for (let i = 0; i < btnsOpenModal.length; i++) {
   btnsOpenModal[i].addEventListener("click", function () {
-    console.log("button clicked");
-    modal.classList.remove("hidden");
-    overlay.classList.remove("hidden");
+    removeHidden(modal);
+    removeHidden(overlay);
   });
 }
 
 btnCloseModal.addEventListener("click", function () {
-  modal.classList.add("hidden");
-  overlay.classList.add("hidden");
+  addHidden(modal);
+  addHidden(overlay);
 });
 
 overlay.addEventListener("click", function () {
-  modal.classList.add("hidden");
-  overlay.classList.add("hidden");
+  addHidden(modal);
+  addHidden(overlay);
 });
